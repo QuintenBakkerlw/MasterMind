@@ -8,10 +8,10 @@ def combination_generator(lst, n):
         for subset in itertools.combinations(lst, L):
             lijst.append(subset)
             for item in lijst:
-                if len(item) > n or len(item) < n:
+                if len(item) is not n:
                     lijst.remove(item)
-                else:
-                    f.write(f"{subset}\n")
+    for item in lijst:
+        f.write(f"{item}\n")
     return True
 
 print(combination_generator(lst, n))
