@@ -1,22 +1,23 @@
 import itertools
 n = 4
-lst = ["green", "yellow", "red", "blue", "black", "white", "orange", "brown"]
+lst = ["G", "Y", "R", "B", "B", "W", "O", "B"]
 def combination_generator(lst, n):
-    f = open("combination.txt", "w")
+    lijstcombinatie = []
     lijst = []
     for L in range(0, len(lst) + 1):
         for subset in itertools.combinations(lst, L):
-            lijst.append(subset)
+            lijst.append(list(subset))
             for item in lijst:
                 if len(item) is not n:
                     lijst.remove(item)
     for item in lijst:
-        f.write(f"{item}\n")
-    return True
+        lijstcombinatie.append(item)
+    return lijstcombinatie
 
-print(combination_generator(lst, n))
 
-# stuff = [1, 2, 3]
+
+
+
 
 
 

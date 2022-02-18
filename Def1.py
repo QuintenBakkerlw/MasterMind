@@ -1,14 +1,15 @@
 import random
-
+from Def2 import combination_generator
 "Random combination generator"
+lst = ["G", "Y", "R", "B", "B", "W", "O", "B"]
 n = 4
-lst = ["green", "yellow", "red", "blue", "black", "white", "orange", "brown"]
-def combination_maker(lst,n):
-    combination = []
-    for i in range(0,n):
-        random_element = random.choice(lst)
-        combination.append(random_element)
+lst = combination_generator(lst,n)
+def main_combination(lst):
+    combination = random.choice(lst)
+
     return combination
 
-print(combination_maker(lst,n))
+
+
+
 

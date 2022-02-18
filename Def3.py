@@ -1,22 +1,26 @@
-# m_combination = ['yellow', 'blue', 'red', 'white']
-# combination = ['yellow', 'yellow', 'black', 'black']
-def combination_checker(m_combination, combination):
+
+def combination_checker(combination_1, combination_2):
     lst = []
     red = 0
     white = 0
-    for index in range(0, 3):
-        if m_combination[index] == combination[index]:
+    for i in range(0, len(combination_1)):
+        if combination_1[i] == combination_2[i]:
             red += 1
-            lst.append(index)
+            lst.append(combination_1.index(combination_1[i]))
 
+    for x in reversed(lst):
+        del combination_1[x]
 
-    for i in reversed(lst):
-        m_combination.remove(m_combination[i])
-
-
-    for x in range(0, len(m_combination)):
-        if m_combination[x] in combination:
+    for y in range(0, len(combination_1)):
+        if combination_1[y] in combination_2:
             white += 1
 
     return red, white
+
+
+
+
+
+
+
 
